@@ -85,14 +85,15 @@ running = True
 
 def GAME_OVER(SCORE):
     font1 = pygame.font.SysFont("Arial", 113, bold=True)
-
+    font2 = pygame.font.SysFont("Arial", 50, bold=True )
     waiting = True
     while waiting:
-        game_over = font1.render(f" GAME OVER : SCORE = {int(SCORE)}", True, (0, 0, 0))
-
+        game_over = font1.render(f" GAME OVER", True, (42, 98, 253))
+        score =font2.render(f"SCORE ={int(SCORE)}",True,(0,0,0))
         bg1 = pygame.image.load(BACKGROUND_IMAGE)
         bg1 = pygame.transform.scale(bg1, (WIDTH, HEIGHT))
         screen.blit(bg1, (0, 0))
+        screen.blit(score,(WIDTH // 2 - score.get_width() // 2,( HEIGHT // 2 - score.get_height() // 2)+80))
         screen.blit(game_over, (WIDTH // 2 - game_over.get_width() // 2, HEIGHT // 2 - game_over.get_height() // 2))
 
         pygame.display.flip()
@@ -100,7 +101,7 @@ def GAME_OVER(SCORE):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE:
                 waiting = False
 
 
@@ -206,4 +207,5 @@ sys.exit()
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 
