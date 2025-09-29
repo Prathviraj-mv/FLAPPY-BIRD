@@ -6,5 +6,5 @@ A simple Flappy Bird clone built with Python and Pygame.
 </p1>
 
 <p1>
-<img src ="Sc's/Screenshot 2025-09-29 163143.png" >
+<img src ="Sc's/Screenshot 2025-09-29 164213.png" >
 </p1
